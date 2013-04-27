@@ -54,7 +54,7 @@ if __name__ == '__main__':
 	# Initialize VideoCapture 
 	(vc,kernel) = init(wnd_main)
 	while True:
-		key,frame = vc.read()
+		val,frame = vc.read()
 		if init_stage:
 			contours = get_components(frame, prev, kernel, wnd_debug)
 			if not contours == None:
