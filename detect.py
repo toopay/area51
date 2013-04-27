@@ -4,7 +4,7 @@
     ~~~~~~~~~
 
 	Face-detection with OpenCV
-	Usage: ./detect some-picture.jpg
+	Usage: ./detect.py some-picture.jpg
 
     :author: Taufan Aditya 
 """
