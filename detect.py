@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 """
-    detect.py
-    ~~~~~~~~~
+	detect.py
+	~~~~~~~~~
 
 	Face-detection with OpenCV
 
 	Usage: ./detect.py some-picture.jpg 
 	(Will outputing "some-picture-output.jpg" with rectangled faces)
 
-    :author: Taufan Aditya 
+	:author: Taufan Aditya 
 """
 import cv2
 import sys

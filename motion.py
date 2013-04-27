@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 """
-    motion.py
-    ~~~~~~~~~
+	motion.py
+	~~~~~~~~~
 
 	Motion detector with OpenCV 
 
 	Usage: ./motion.py 
+	(Press 's' to start tracking and 'q' to Quit)
 
-    :author: Taufan Aditya 
+	:author: Taufan Aditya 
 """
 import cv2
 
@@ -20,6 +21,7 @@ def init(video):
 	vc.set(3, 320) 
 	vc.set(4, 240)
 	cv2.namedWindow(video)
+	# Set initial kernel for morphology transformation
 	kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(3,3))
 	return (vc,kernel)
 	
@@ -49,7 +51,7 @@ if __name__ == '__main__':
 	wnd_main = "Main VC"
 	wnd_debug = "Diff VC"
 	prev = None
-	# Initialize VideoCapture
+	# Initialize VideoCapture 
 	(vc,kernel) = init(wnd_main)
 	while True:
 		key,frame = vc.read()
