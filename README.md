@@ -12,3 +12,4 @@ TOC
 - [detect.py](https://github.com/toopay/area51/blob/master/toc/detect.md)
 - [matching.py](https://github.com/toopay/area51/blob/master/toc/matching.md)
 - [motion.py](https://github.com/toopay/area51/blob/master/toc/motion.md)
+- [blink.py](https://github.com/toopay/area51/blob/master/toc/blink.md)
