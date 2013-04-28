@@ -1,6 +1,6 @@
 What is this?
 -------------
-This is a collection of my experiment with computer vision stuff that i learned from various sources. Enjoy!
+This is a collection of my experiment with computer vision stuff. Enjoy!
 
 Requirements
 ------------
@@ -10,3 +10,4 @@ Requirements
 TOC
 ---
 - [detect.py](https://github.com/toopay/area51/blob/master/toc/detect.md)
+- [matching.py](https://github.com/toopay/area51/blob/master/toc/matching.md)
