@@ -3,7 +3,7 @@
 	blink.py
 	~~~~~~~~
 
-	Real-time eye and blink detection with OpenCV
+	Real-time eye tracking and blink detection with OpenCV
 	Usage: ./blink.py 
 
 	:author: Taufan Aditya 
