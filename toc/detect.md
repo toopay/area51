@@ -1,4 +1,4 @@
-detect.py
+[detect.py](https://github.com/toopay/area51/blob/master/detect.py)
 ---------
 
 Face-detection with OpenCV
