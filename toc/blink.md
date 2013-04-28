@@ -14,4 +14,4 @@ Demo
 ----
 | Locating Mode | Tracking Mode | Blinked Detected |
 | :---: | :---: | :---: |
-| ![locating...](http://i.imgur.com/Y9VpHMn.png) | ![tracking...](http://i.imgur.com/Y9VpHMn.png) | ![blinking...](http://i.imgur.com/Y9VpHMn.png) |
+| ![locating...](http://i.imgur.com/Y9VpHMn.png) | ![tracking...](http://i.imgur.com/eJMrKgY.png) | ![blinking...](http://i.imgur.com/slY3r60.png) |
