@@ -1,5 +1,5 @@
-**detect.py**
-~~~~~~~~~
+detect.py
+---------
 
 Face-detection with OpenCV
 
