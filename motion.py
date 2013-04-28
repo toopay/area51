@@ -3,7 +3,7 @@
 	motion.py
 	~~~~~~~~~
 
-	Motion detector with OpenCV 
+	Motion detection with OpenCV 
 
 	Usage: ./motion.py 
 	(Press 's' to start tracking and 'q' to Quit)
