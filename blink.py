@@ -22,7 +22,10 @@ def is_eyes(comps, frame):
 		# Find reasonable horizontal and vertical distance
 		x_dist_ratio = abs(comps[0][0] - comps[1][0]) /comps[0][2]
 		y_dist_ratio = abs(comps[0][1] - comps[1][1])
-		if 2 <= x_dist_ratio <= 5 and y_dist_ratio <= 5:
+		# Find reasonable width and height comparison
+		w_diff = comps[0][2]-comps[1][2]
+		h_diff = comps[0][3]-comps[1][3]
+		if (2 <= x_dist_ratio <= 5 and y_dist_ratio <= 5) and (-3 < w_diff < 3 and -2 < h_diff < 2):
 			found = True
 			for x,y,w,h in comps:
 				tpl += ((cv2.getRectSubPix(frame, (w+tpl_w,h+tpl_h), (x+w/2,y+h/2))),)
@@ -95,7 +98,7 @@ if __name__ == '__main__':
 					diff = draw_eye(ROI, diff, diff_color)
 					if is_blink(comps, ROI):
 						blink = ROI
-						delay = 5
+						delay = 3
 		# Write text if blinked
 		if delay > 0 and tracking_stage:
 			cv2.putText(frame, blinked_text, (blink[0],blink[1]-2), font, 1.0, text_color, 2)
