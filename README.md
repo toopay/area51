@@ -1,6 +1,6 @@
 What is this?
 -------------
-This is a collection of computer vision stuff that i learned from various sources. Enjoy!
+This is a collection of my experiment with computer vision stuff that i learned from various sources. Enjoy!
 
 Requirements
 ------------
