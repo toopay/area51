@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """
-    blink.py
-    ~~~~~~~~~
+	blink.py
+	~~~~~~~~
 
 	Real-time eye and blink detection with OpenCV
 	Usage: ./blink.py 
 
-    :author: Taufan Aditya 
+	:author: Taufan Aditya 
 """
 import cv2
 import motion
