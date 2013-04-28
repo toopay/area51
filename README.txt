@@ -1,1 +1,0 @@
-Dev Env : Python 2.7.* (require NumPy), OpenCV 2.3.*
