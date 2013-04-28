@@ -28,22 +28,28 @@ def init(video):
 def grayify(img):
 	return cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
 
-def get_components(frame, prev, kernel, video):
-	# Stream diff frame for secondary window
+def get_components(frame, prev, kernel):
+	# Get diff frame for secondary window
 	diff = cv2.subtract(grayify(frame), grayify(prev));
 	(thresh, diff) = cv2.threshold(diff, 5, 255, cv2.THRESH_BINARY)
 	diff = cv2.morphologyEx(diff, cv2.MORPH_OPEN, kernel)
-	cv2.imshow(video, diff)
 	# Find contours and hierarcy from diff
-	(contours, hierarchy) = cv2.findContours(diff, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
-	return contours
+	(contours, hierarchy) = cv2.findContours(diff.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+	return diff,contours
+
+def get_moved_components(contours, min_width, min_height):
+	comps = ()
+	for c in contours:
+		comp = cv2.boundingRect(c)
+		# Optimize the motion result by reduce the noise
+		if comp[2] > min_width and comp[3] > min_height:
+			comps += (comp,)
+	return comps
 
 def draw_motion(contours, frame):
-	for c in contours:
-		(x,y,w,h) = cv2.boundingRect(c)
-		# Optimize the motion result by reduce the noise
-		if w > 5 and h > 5:
-			cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0))
+	comps = get_moved_components(contours, 5, 5)
+	for (x,y,w,h) in comps:
+		cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0))
 	return frame
 
 if __name__ == '__main__':
@@ -56,10 +62,10 @@ if __name__ == '__main__':
 	while True:
 		val,frame = vc.read()
 		if init_stage:
-			contours = get_components(frame, prev, kernel, wnd_debug)
+			diff,contours = get_components(frame, prev, kernel)
+			cv2.imshow(wnd_debug, diff)
 			if not contours == None:
 				frame = draw_motion(contours, frame)
-
 		# Stream the frame for main window
 		cv2.imshow(wnd_main, frame)
 		prev = frame
