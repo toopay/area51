@@ -5,7 +5,7 @@ This is a collection of my experiment with computer vision stuff. Enjoy!
 Requirements
 ------------
 - Python 2.7.* (with NumPy)
-- OpenCV 2.3.*
+- [OpenCV](http://opencv.org/) 2.3.*
 
 TOC
 ---
